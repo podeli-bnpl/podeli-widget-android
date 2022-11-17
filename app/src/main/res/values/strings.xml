@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PodeliWidget</string>
+    <string name="payment_amount">Введите сумму</string>
+</resources>
