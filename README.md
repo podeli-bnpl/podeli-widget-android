@@ -1,4 +1,29 @@
+[![](https://jitpack.io/v/podeli-bnpl/podeli-widget-android.svg)](https://jitpack.io/#podeli-bnpl/podeli-widget-android)
+
 # podeli-widget-android
+
+Чтобы подключить, нужно в settings.gradle добавить
+```
+pluginManagement {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+dependencyResolutionManagement {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+И в build.gradle в зависимости
+```
+dependencies {
+  implementation 'com.github.podeli-bnpl:podeli-widget-android:1.0.0'
+}
+```
+
 Добавить вью
 ```
 <com.podeli.podeliwidget.PodeliWidget
