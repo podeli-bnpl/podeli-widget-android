@@ -17,7 +17,7 @@ dependencyResolutionManagement {
     }
 }
 ```
-И в build.gradle в зависимости
+И в build.gradle
 ```
 dependencies {
   implementation 'com.github.podeli-bnpl:podeli-widget-android:v1.0.0'
