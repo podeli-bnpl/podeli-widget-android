@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color">#343434</color>
+    <color name="inner_border_color">#5D5D5D</color>
+    <color name="progress_bar_color">#626262</color>
+    <color name="podeli_icon_color">#FFFFFF</color>
+
+    <color name="total_amount_text_color">#FFFFFF</color>
+    <color name="date_text_color">#AFAFAF</color>
+    <color name="amount_text_color">#FFFFFF</color>
+</resources>

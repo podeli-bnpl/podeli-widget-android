@@ -36,6 +36,6 @@
   <path
       android:pathData="M20.357,1.855C20.357,2.249 20.645,2.588 21.037,2.644C23.134,2.942 24.793,4.598 25.091,6.691C25.147,7.082 25.487,7.369 25.881,7.369C26.364,7.369 26.743,6.945 26.674,6.467C26.277,3.671 24.061,1.459 21.26,1.062C20.783,0.996 20.357,1.373 20.357,1.855Z"
       android:strokeWidth="0.37674"
-      android:fillColor="#000000"
-      android:strokeColor="#000000"/>
+      android:fillColor="@color/podeli_icon_color"
+      android:strokeColor="@color/podeli_icon_color"/>
 </vector>
