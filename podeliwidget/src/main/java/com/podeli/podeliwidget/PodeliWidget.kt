@@ -60,7 +60,7 @@ class PodeliWidget @JvmOverloads constructor(
                 ResourcesCompat.getFont(context, R.font.styrene_b_lc_regular),
                 Typeface.NORMAL
             )
-            dateTextView.setTextColor(ContextCompat.getColor(context, R.color.text_light_06))
+            dateTextView.setTextColor(ContextCompat.getColor(context, R.color.date_text_color))
             dateTextView.textSize = 10f
             dateTextView.text = if (date.epochSeconds == Clock.System.now().epochSeconds) {
                 resources.getString(R.string.today)
@@ -72,7 +72,7 @@ class PodeliWidget @JvmOverloads constructor(
                 ResourcesCompat.getFont(context, R.font.styrene_b_lc_medium),
                 Typeface.NORMAL
             )
-            amountTextView.setTextColor(ContextCompat.getColor(context, R.color.text_light_04))
+            amountTextView.setTextColor(ContextCompat.getColor(context, R.color.amount_text_color))
             amountTextView.textSize = 11f
             amountTextView.text =
                 if (paymentAmount != null) context.formatMoney(paymentAmount / 4) else "25%"
