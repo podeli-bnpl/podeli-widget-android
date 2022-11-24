@@ -12,6 +12,7 @@ import androidx.core.content.res.ResourcesCompat
 import com.podeli.podeliwidget.FormatUtils.formatDate
 import com.podeli.podeliwidget.FormatUtils.formatMoney
 import kotlinx.datetime.Clock
+import kotlin.math.ceil
 
 class PodeliWidget @JvmOverloads constructor(
     context: Context,
@@ -32,8 +33,8 @@ class PodeliWidget @JvmOverloads constructor(
 
     private fun init(paymentAmount: Double?) {
         val screenWidth = resources.displayMetrics.widthPixels
-
-        DatesGenerator.dates.map { date ->
+        var countLastAmount = 0.0
+        DatesGenerator.dates.mapIndexed { index, date ->
             val view = View(context)
 
             val layoutParams = LayoutParams(
@@ -75,7 +76,16 @@ class PodeliWidget @JvmOverloads constructor(
             amountTextView.setTextColor(ContextCompat.getColor(context, R.color.amount_text_color))
             amountTextView.textSize = 11f
             amountTextView.text =
-                if (paymentAmount != null) context.formatMoney(paymentAmount / 4) else "25%"
+                if (paymentAmount != null) {
+                    if (index != 3) {
+                        countLastAmount += ceil(paymentAmount / 4)
+                        context.formatMoney(ceil(paymentAmount / 4))
+                    } else {
+                        context.formatMoney(paymentAmount - countLastAmount)
+                    }
+                } else {
+                    "25%"
+                }
 
             val partPaymentItem = LinearLayout(context)
             partPaymentItem.layoutParams =
