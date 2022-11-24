@@ -15,6 +15,6 @@ class MainActivity : AppCompatActivity() {
         val paymentWidget = findViewById<PodeliWidget>(R.id.podeli_widget)
 
         paymentWidgetProcent.setPaymentAmount()
-        paymentWidget.setPaymentAmount(3000.0)
+        paymentWidget.setPaymentAmount(3000.03)
     }
 }
