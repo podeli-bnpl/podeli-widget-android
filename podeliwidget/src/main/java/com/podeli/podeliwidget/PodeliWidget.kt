@@ -12,7 +12,8 @@ import androidx.core.content.res.ResourcesCompat
 import com.podeli.podeliwidget.FormatUtils.formatDate
 import com.podeli.podeliwidget.FormatUtils.formatMoney
 import kotlinx.datetime.Clock
-import kotlin.math.ceil
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 class PodeliWidget @JvmOverloads constructor(
     context: Context,
@@ -34,6 +35,15 @@ class PodeliWidget @JvmOverloads constructor(
     private fun init(paymentAmount: Double?) {
         val screenWidth = resources.displayMetrics.widthPixels
         var countLastAmount = 0.0
+        var partAmount = 0.0
+
+        val df = DecimalFormat("#.##")
+        df.roundingMode = RoundingMode.UP
+        paymentAmount?.let {
+            partAmount = df.format(it / 4).toDouble()
+            countLastAmount = it - (partAmount * 3)
+        }
+
         DatesGenerator.dates.mapIndexed { index, date ->
             val view = View(context)
 
@@ -78,10 +88,9 @@ class PodeliWidget @JvmOverloads constructor(
             amountTextView.text =
                 if (paymentAmount != null) {
                     if (index != 3) {
-                        countLastAmount += ceil(paymentAmount / 4)
-                        context.formatMoney(ceil(paymentAmount / 4))
+                        context.formatMoney(partAmount)
                     } else {
-                        context.formatMoney(paymentAmount - countLastAmount)
+                        context.formatMoney(countLastAmount)
                     }
                 } else {
                     "25%"
