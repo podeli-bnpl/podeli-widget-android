@@ -44,6 +44,9 @@ class PodeliWidget @JvmOverloads constructor(
             countLastAmount = it - (partAmount * 3)
         }
 
+        partPaymentContainer.removeAllViews()
+        partPaymentContainer.invalidate()
+
         DatesGenerator.dates.mapIndexed { index, date ->
             val view = View(context)
 
