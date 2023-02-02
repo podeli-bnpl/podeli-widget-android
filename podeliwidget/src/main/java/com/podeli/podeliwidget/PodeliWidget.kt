@@ -14,6 +14,8 @@ import com.podeli.podeliwidget.FormatUtils.formatMoney
 import kotlinx.datetime.Clock
 import java.math.RoundingMode
 import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
+import java.util.*
 
 class PodeliWidget @JvmOverloads constructor(
     context: Context,
@@ -39,6 +41,7 @@ class PodeliWidget @JvmOverloads constructor(
 
         val df = DecimalFormat("#.##")
         df.roundingMode = RoundingMode.UP
+        df.decimalFormatSymbols = DecimalFormatSymbols.getInstance(Locale.ENGLISH)
         paymentAmount?.let {
             partAmount = df.format(it / 4).toDouble()
             countLastAmount = it - (partAmount * 3)
