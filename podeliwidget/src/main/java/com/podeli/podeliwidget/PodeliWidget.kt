@@ -66,7 +66,7 @@ class PodeliWidget @JvmOverloads constructor(
             )
             view.layoutParams = layoutParams
             view.setBackgroundResource(
-                if (date.epochSeconds == Clock.System.now().epochSeconds) {
+                if (index == 0) {
                     R.drawable.ic_progress_bar_active
                 } else {
                     R.drawable.ic_progress_bar
