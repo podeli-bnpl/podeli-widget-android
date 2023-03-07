@@ -24,12 +24,20 @@ class PodeliWidget @JvmOverloads constructor(
 
     private val paymentAmountTextView: TextView
     private val partPaymentContainer: LinearLayout
+    private val licenceAgreementTextView: TextView
+
+    private var licenceAgreementListener: () -> Unit = {}
 
     init {
         View.inflate(context, R.layout.widget_podeli, this)
 
         paymentAmountTextView = findViewById(R.id.payment_amount_text_view)
         partPaymentContainer = findViewById(R.id.progress_bar_container)
+        licenceAgreementTextView = findViewById(R.id.licence_agreement_text_view)
+
+        licenceAgreementTextView.setOnClickListener {
+            licenceAgreementListener.invoke()
+        }
 
         setBackgroundResource(R.drawable.bg_widget)
     }
@@ -119,5 +127,9 @@ class PodeliWidget @JvmOverloads constructor(
         paymentAmountTextView.text =
             if (paymentAmount != null) context.formatMoney(paymentAmount) else "100%"
         init(paymentAmount)
+    }
+
+    fun setOnLicenceAgreementListener(listener: () -> Unit) {
+        licenceAgreementListener = listener
     }
 }
