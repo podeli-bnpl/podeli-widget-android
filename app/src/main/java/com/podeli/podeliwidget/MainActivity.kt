@@ -1,9 +1,12 @@
 package com.podeli.podeliwidget
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +28,11 @@ class MainActivity : AppCompatActivity() {
             } else {
                 paymentWidget.setPaymentAmount(amount)
             }
+        }
+
+        paymentWidget.setOnLicenceAgreementListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.podeli.ru"))
+            startActivity(browserIntent)
         }
     }
 }

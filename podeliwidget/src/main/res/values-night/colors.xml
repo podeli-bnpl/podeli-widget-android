@@ -8,4 +8,5 @@
     <color name="total_amount_text_color">#FFFFFF</color>
     <color name="date_text_color">#AFAFAF</color>
     <color name="amount_text_color">#FFFFFF</color>
+    <color name="licence_agreement_text_color">#FFFFFF</color>
 </resources>

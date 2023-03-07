@@ -41,8 +41,26 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
-        android:paddingBottom="8dp"
+        android:paddingBottom="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/payment_amount_text_view" />
+
+    <TextView
+        android:id="@+id/licence_agreement_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/styrene_b_lc_medium"
+        android:gravity="center"
+        android:letterSpacing="-0.02"
+        android:paddingBottom="14dp"
+        android:text="@string/info"
+        android:textColor="@color/licence_agreement_text_color"
+        android:textSize="12sp"
+        android:typeface="normal"
+        app:drawableEndCompat="@drawable/ic_info"
+        app:layout_constraintStart_toStartOf="@id/progress_bar_container"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar_container" />
 </merge>
