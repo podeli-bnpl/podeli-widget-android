@@ -1,18 +1,14 @@
 package com.podeli.podeliwidget
 
-import kotlinx.datetime.Clock
-import kotlinx.datetime.DateTimeUnit
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.plus
+import java.util.Date
 
 object DatesGenerator {
-    private val instant = Clock.System.now()
-    private val systemTZ = TimeZone.currentSystemDefault()
+    private val instant = System.currentTimeMillis()
 
     val dates = listOf(
-        instant,
-        instant.plus(14, DateTimeUnit.DAY, systemTZ),
-        instant.plus(28, DateTimeUnit.DAY, systemTZ),
-        instant.plus(42, DateTimeUnit.DAY, systemTZ),
+        Date(instant),
+        Date(instant + 14 * 24 * 60 * 60 * 1000),
+        Date(instant + 28 * 24 * 60 * 60 * 1000),
+        Date(instant + 42 * 24 * 60 * 60 * 1000)
     )
 }
