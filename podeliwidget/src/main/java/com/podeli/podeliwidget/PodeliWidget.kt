@@ -11,7 +11,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.podeli.podeliwidget.FormatUtils.formatDate
 import com.podeli.podeliwidget.FormatUtils.formatMoney
-import kotlinx.datetime.Clock
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
@@ -87,7 +86,7 @@ class PodeliWidget @JvmOverloads constructor(
             )
             dateTextView.setTextColor(ContextCompat.getColor(context, R.color.date_text_color))
             dateTextView.textSize = 10f
-            dateTextView.text = if (date.epochSeconds == Clock.System.now().epochSeconds) {
+            dateTextView.text = if (index == 0) {
                 resources.getString(R.string.today)
             } else {
                 context.formatDate(date)
