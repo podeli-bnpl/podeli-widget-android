@@ -7,8 +7,8 @@ object DatesGenerator {
 
     val dates = listOf(
         Date(instant),
-        Date(instant + 14 * 24 * 60 * 60 * 1000),
-        Date(instant + 28 * 24 * 60 * 60 * 1000),
-        Date(instant + 42 * 24 * 60 * 60 * 1000)
+        Date(instant + 14L * 24 * 60 * 60 * 1000),
+        Date(instant + 28L * 24 * 60 * 60 * 1000),
+        Date(instant + 42L * 24 * 60 * 60 * 1000)
     )
 }
